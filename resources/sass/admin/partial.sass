@@ -1,0 +1,49 @@
+#left-nav
+    background: $white
+    padding: 88px 25px 12px 30px
+    height: 100vh
+    .menu-link
+        margin-bottom: 20px
+        a
+            display: flex
+            align-items: center
+            div
+                width: 20px
+                height: 20px
+                background: $light-gray
+                border-radius: 2px
+                margin-right: 8px
+                transition: 0.5s
+        a:hover
+            div
+                background: $dark-grey
+    .menu-link.active
+        a
+            div
+                background: $dark-grey
+    .menu-link:last-child
+        margin-bottom: 0
+
+#top-nav
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    background: $white
+    padding: 8px 30px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .logo
+        p
+            margin-bottom: 0
+            font-weight: 400
+            font-size: 16px
+            line-height: 24px
+
+    .links-group
+        display: flex
+        div
+            margin-right: 12px
+        div:last-child
+            margin-right: 0

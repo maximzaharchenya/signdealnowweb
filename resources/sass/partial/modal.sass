@@ -1,0 +1,60 @@
+#add-user, #add-note, #add-notary
+    .modal-dialog
+        max-width: 972px
+        @media screen and (max-width: 991px)
+            max-width: 96%
+
+    .modal-content
+        border: none
+        border-radius: 4px
+
+    .modal-body
+        padding: 60px
+        position: relative
+        @media screen and (max-width: 991px)
+            padding: 30px 24px
+
+        .close
+            float: none
+            position: absolute
+            right: 30px
+            top: 30px
+            @media screen and (max-width: 991px)
+                right: 12px
+                top: 12px
+            &:hover
+                cursor: pointer
+
+        h3
+            padding-right: 30px
+
+
+
+#add-notary
+    .modal-body
+        padding: 0
+
+    .modal-image
+        width: 246px
+        background: #EEEEEE
+        @media screen and (max-width: 991px)
+            display: none
+        img
+            height: 100%
+
+    .card--body
+        padding: 40px
+        @media screen and (max-width: 991px)
+            padding: 30px 24px
+            width: 100%
+
+        h4
+            padding-right: 30px
+
+    .buttons-container
+        button
+            @media screen and (max-width: 575px)
+                width: 100%
+                text-align: center
+
+

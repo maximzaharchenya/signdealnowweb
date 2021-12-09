@@ -1,0 +1,89 @@
+$black-color: #000000
+
+$dark-grey: #BFBFBF
+$light-gray: #F3F3F3
+
+$body-bg: #F3F3F3
+
+
+/* DEFAULT */
+$color-primary: #0054D4
+$color-primary-dark: #6584A0
+$color-primary-light: #E4F3FF
+
+
+/* BACKGROUND */
+$bg-white: #ffffff
+$bg-light: #F2F6FC
+$bg-grey: #EEEEEE
+$bg-blue: #E4F3FF
+
+/* TEXT COLOR */
+$text-dark: #242424
+$text-grey: #666666
+$text-light: #ACACAC
+$text-white: #ffffff
+
+
+
+.color-text-dark
+    color: $black-color
+.color-text-grey
+    color: $text-grey
+.color-text-light
+    color: $text-light
+.color-text-primary
+    color: $color-primary
+.color-text-white
+    color: $text-white
+
+.bg-light
+    background: $bg-light
+.bg-primary
+    background: $color-primary
+
+// Scrollbar
+::-webkit-scrollbar
+    width: 6px
+    height: 6px
+
+/* Track */
+::-webkit-scrollbar-track
+    background: #dbdbdb
+
+
+/* Handle */
+::-webkit-scrollbar-thumb
+    background: $color-primary
+    border-radius: 8px
+    opacity: 0.8
+
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+    opacity: 1
+
+body
+    scrollbar-width: none
+    scrollbar-color: transparent transparent
+    &::-webkit-scrollbar-track
+        background: #dbdbdb
+    &::-webkit-scrollbar-thumb
+        background: $color-primary
+        border-radius: 8px
+        opacity: 0.8
+    &::-webkit-scrollbar-button
+        &:vertical
+            &:start:decrement
+                display: none
+                background: transparent
+            &:end:increment
+                display: none
+                background: transparent
+        &:horizontal
+            &:start:decrement
+                display: none
+                background: transparent
+            &:end:increment
+                display: none
+                background: transparent

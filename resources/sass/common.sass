@@ -1,0 +1,642 @@
+.container
+    width: 1236px
+    max-width: 1236px
+    padding: 0
+    @media screen and (max-width: 1365px)
+        width: 1024px
+        max-width: 1024px
+    @media screen and (max-width: 1200px)
+        width: 100%
+        max-width: 100%
+        padding-left: 100px
+        padding-right: 100px
+    @media screen and (max-width: 991px)
+        padding-left: 80px
+        padding-right: 80px
+    @media screen and (max-width: 767px)
+        padding-left: 40px
+        padding-right: 40px
+    @media screen and (max-width: 575px)
+        padding-left: 24px
+        padding-right: 24px
+
+
+.container-small
+    width: 1000px
+    max-width: 1000px
+    padding: 0
+    margin: 0 auto
+    @media screen and (max-width: 1200px)
+        width: 100%
+        max-width: 100%
+        padding-left: 100px
+        padding-right: 100px
+    @media screen and (max-width: 991px)
+        padding-left: 80px
+        padding-right: 80px
+    @media screen and (max-width: 767px)
+        padding-left: 40px
+        padding-right: 40px
+    @media screen and (max-width: 575px)
+        padding-left: 24px
+        padding-right: 24px
+
+
+/** BUTTONS **/
+button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled)
+    -webkit-appearance: none !important
+    box-shadow: none !important
+    outline: none !important
+
+.btn-large
+    border-radius: 28px
+    font-size: 16px
+    border: 1px solid $color-primary
+    font-weight: 500
+    padding: 11px 40px
+    line-height: 1.5
+    display: inline-block
+    transition: 300ms ease-in-out
+    text-align: center
+
+
+.btn-large.btn-v2
+    background: #F3F3F3
+    color: $color-primary
+    &:hover
+        background: $color-primary-light
+        color: $color-primary
+
+
+.btn-small
+    border-radius: 18px
+    font-weight: 500
+    padding: 7px 16px
+    display: inline-block
+    transition: 300ms ease-in-out
+
+.btn-v1
+    background: $color-primary
+    color: $text-white
+    border: 1px solid $color-primary
+    &:hover
+        background: #004484
+        color: $text-white
+        border: 1px solid #004484
+
+.btn-small.btn-v2
+    background: $bg-grey
+    border: 1px solid $bg-grey
+    color: $color-primary
+    &:hover
+        background: $color-primary-light
+        color: $color-primary
+        border: 1px solid $color-primary-light
+
+
+
+.btn-filter
+    border-radius: 6px
+    width: 100%
+    background: $bg-light
+    color: $color-primary
+    font-weight: 400
+    border: none
+    height: 48px
+
+
+
+.btn-filter-active
+    background: $color-primary
+    color: #ffffff
+
+
+button.btn-filter.no-effects
+    &:hover
+        background: $color-primary
+        color: #ffffff
+        cursor: default
+
+
+.btn-large[disabled="disabled"], .btn-small[disabled="disabled"]
+    opacity: 0.3
+.btn-large[disabled="disabled"].btn-v1, .btn-small[disabled="disabled"].btn-v1
+    &:hover
+        background: $color-primary
+        color: $text-white
+
+.btn-small[disabled="disabled"].btn-v2
+    opacity: 0.7
+    color: $text-light
+    &:hover
+        background: $bg-grey
+        border: 1px solid $bg-grey
+
+
+
+
+
+
+
+/* Backgrounds */
+
+.bg-primary-light
+    background: $color-primary-light
+
+/* FORM */
+.custom-form
+
+    label
+        color: $text-dark
+        margin-bottom: 4px
+        display: block
+
+    label.color-text-light
+        color: $text-light
+
+    input, textarea
+        display: block
+        padding: 12px 20px
+        font-size: 16px
+        border-radius: 4px
+        border: 1px solid #E2E2E2
+        width: 100%
+        outline: none !important
+        box-shadow: none !important
+        transition: 300ms ease-in-out
+        background: #ffffff
+        @media screen and (max-width: 340px)
+            padding: 12px 16px
+
+        &:focus, &:active
+            border: 1px solid $color-primary
+
+    textarea
+        resize: none
+
+    .form--item
+        position: relative
+        &::before
+            position: absolute
+            opacity: 0
+            border-radius: 4px
+            height: 46px
+            right: 1px
+            bottom: 1px
+            z-index: 2
+            background: #ffffff
+            padding-right: 19px
+            transition: 300ms ease-in-out
+
+    .disabled--item
+        //opacity: 0.9
+        label
+            color: $text-grey
+        label.color-text-light
+            color: $text-light
+        input, textarea
+            color: $text-grey
+            &:focus, &:active
+                border: 1px solid #E2E2E2
+        .vue-tel-input
+            .vti__dropdown
+                &:hover
+                    background: #ffffff
+                    cursor: default
+
+
+    .profile-image-loader
+        .custom-file-label
+            border: none !important
+            box-shadow: none !important
+            padding-left: 0
+            padding-top: 6px
+            padding-bottom: 6px
+            width: 208px
+            margin-bottom: 0
+            &::after
+                content: url("/svg/load.svg")
+                background: #ffffff
+                height: 32px
+                padding: 6px
+
+            &:hover
+                cursor: pointer
+
+    .image-loader
+        .custom-file-label
+            border: 1px solid #E2E2E2
+            height: 48px
+            padding: 12px 20px
+            box-shadow: none !important
+
+            .form-file-text
+                color: $text-light
+            &::after
+                content: url("/svg/load.svg")
+                background: #ffffff
+                height: 48px
+                padding: 12px
+                border-left: none
+
+            &:hover
+                cursor: pointer
+
+
+
+
+    .is-invalid
+        animation: is-invalid 500ms linear
+        &::before
+            content: url("/svg/valid-error.svg")
+            opacity: 1
+    .is-valid
+        &::before
+            content: url("/svg/valid-ok.svg")
+            opacity: 1
+
+@keyframes is-invalid
+    0%
+        transform: translateX(0)
+    20%
+        transform: translateX(-5px)
+    40%
+        transform: translateX(5px)
+    60%
+        transform: translateX(-5px)
+    80%
+        transform: translateX(5px)
+    100%
+        transform: translateX(0)
+
+.checkbox
+    input[type="checkbox"], input[type="radio"]
+        display: none
+
+    label
+        padding-left: 28px
+        position: relative
+        margin-bottom: 0
+        &::before
+            content: ''
+            position: absolute
+            border-radius: 4px
+            border: 1px solid $color-primary
+            width: 16px
+            height: 16px
+            top: 1px
+            left: 2px
+            transition: 300ms ease-in-out
+        &::after
+            content: url("/svg/check.svg")
+            position: absolute
+            top: 1px
+            left: 2px
+            height: 16px
+            opacity: 0
+            transition: 300ms ease-in-out
+            transform: rotateY(-180deg)
+
+        &:hover
+            cursor: pointer
+
+
+    input[type="checkbox"]:checked + label
+        &::before
+            background: $color-primary
+        &::after
+            opacity: 1
+            transform: rotateY(0)
+
+    label.fs-16
+        &::before
+            top: 2px
+        &::after
+            top: 2px
+
+.checkbox.disabled--item
+    label
+        &:hover
+            cursor: auto
+
+
+// ** MULTISELECT ** //
+.lang--select
+    .multiselect
+        min-height: 20px
+        .multiselect__tags
+            min-height: 20px
+            padding: 0 28px 0 0 !important
+            border: none
+            background: transparent
+            &:hover
+                cursor: pointer
+
+        .multiselect__single
+            margin-bottom: 0
+            font-weight: 500
+
+        .multiselect__select
+            width: 20px
+            height: 20px
+            padding: 0
+            right: 1px
+            top: 1px
+            &::before
+                content: url("/svg/select-btn-color.svg")
+                top: 0
+                border: none
+                margin: 0
+        .multiselect__content-wrapper
+            width: 200%
+            top: 24px
+
+
+
+.multiselect
+    &:hover
+        cursor: pointer
+    .multiselect__tags
+        padding: 13px 40px 13px 20px
+        min-height: 48px
+        border-color: #E2E2E2
+        transition: 300ms ease-in-out
+        .multiselect__placeholder
+            margin-bottom: 0
+            padding-top: 0
+            font-size: 16px
+            line-height: 1
+        .multiselect__input
+            border: none
+            padding: 0
+            margin-bottom: 0
+            font-size: 14px
+
+
+    .multiselect__single
+        margin-bottom: 0
+        color: $text-dark
+
+    .multiselect__select
+        width: 20px
+        height: 20px
+        padding: 0
+        top: 14px
+        right: 14px
+        position: absolute
+        &::before
+            content: url("/svg/select-btn.svg")
+            top: 0
+            border: none
+            margin: 0
+
+    .multiselect__content-wrapper
+        box-shadow: 0 0 40px rgba(0, 84, 212, 0.1)
+        border-radius: 4px
+        border: none
+        font-size: 14px
+        .multiselect__option--highlight
+            background: $color-primary-light
+            color: $text-dark
+        .multiselect__option--selected.multiselect__option--highlight
+            background: $bg-grey
+        .multiselect__option--selected
+            font-weight: 500
+            color: $color-primary
+
+
+.multiple
+    .multiselect
+        .multiselect__tags
+            padding: 8px 40px 8px 20px
+            .multiselect__tag
+                margin-bottom: 0
+                background: $color-primary-light
+                color: $text-dark
+                padding: 9px 40px 9px 10px
+
+                .multiselect__tag-icon
+                    background: $color-primary
+                    width: 20px
+                    height: 20px
+                    border-radius: 50%
+                    top: 6px
+                    right: 10px
+                    &::after
+                        color: #ffffff
+                        font-weight: 400
+                    &:hover
+                        background: $color-primary-dark
+
+.multiselect--active
+    .multiselect__tags
+        border-color: $color-primary
+
+.multiselect.multiselect--disabled
+    opacity: 1
+    .multiselect__single
+        color: $text-grey
+
+//** vue-tel-input ** //
+.vue-tel-input
+    border: none
+    .vti__dropdown
+        border-bottom-left-radius: 4px
+        border-top-left-radius: 4px
+        border: 1px solid #E2E2E2
+        transition: 300ms ease-in-out
+        &:focus, &:active
+            border: 1px solid #E2E2E2
+
+    input.vti__input
+        border-bottom-left-radius: 0
+        border-top-left-radius: 0
+        border-left: none
+
+    &:focus-within, &:focus
+        box-shadow: none
+        border: none
+        .vti__dropdown
+            &:focus, &:active
+                border: 1px solid #E2E2E2
+        .vti__dropdown.open
+            border: 1px solid #E2E2E2
+        .vti__dropdown
+            border-top: 1px solid $color-primary
+            border-bottom: 1px solid $color-primary
+            border-left: 1px solid $color-primary
+
+    .vti__dropdown-list.below
+        width: 355px
+        top: 46px
+        box-shadow: 0 20px 20px 0 rgba(0, 84, 212, 0.07)
+        border-radius: 4px
+        border: none
+        &::-webkit-scrollbar-track
+            background: $bg-grey
+
+        .vti__dropdown-item
+            transition: 300ms ease-in-out
+            &:hover
+                background: $color-primary-light
+
+
+
+/* swal2 */
+.swal2-container
+    color: $text-dark
+    .swal2-title
+        color: $text-dark
+    .swal2-styled.swal2-confirm,.swal2-cancel.swal2-styled
+        border-radius: 28px
+        padding: 15px 40px
+        min-width: 100px
+        text-align: center
+        box-shadow: none !important
+        outline: none !important
+
+    .swal2-styled.swal2-confirm
+        background: $color-primary
+        &:hover
+            background: #004484
+
+    .swal2-cancel.swal2-styled
+        background: $bg-grey
+        color: $color-primary
+
+    input.swal2-input
+        box-shadow: none !important
+        &:focus, &:active
+            border: 1px solid $color-primary
+
+
+
+
+
+
+
+/** SIZES **/
+.mb-72
+    margin-bottom: 72px
+    @media screen and (max-width: 575px)
+        margin-bottom: 35px
+.mb-60
+    margin-bottom: 60px
+    @media screen and (max-width: 575px)
+        margin-bottom: 42px
+.mb-40
+    margin-bottom: 40px
+    @media screen and (max-width: 575px)
+        margin-bottom: 30px
+
+.mb-30
+    margin-bottom: 30px
+.mb-24
+    margin-bottom: 24px
+.mb-20
+    margin-bottom: 20px
+.mb-16
+    margin-bottom: 16px
+.mb-12
+    margin-bottom: 12px
+
+.mr-40
+    margin-right: 40px
+
+.pb-20
+    padding-bottom: 20px
+
+.pt-160
+    padding-top: 160px
+    @media screen and (max-width: 1365px)
+        padding-top: 100px
+    @media screen and (max-width: 575px)
+        padding-top: 48px
+.pb-160
+    padding-bottom: 160px
+    @media screen and (max-width: 1365px)
+        padding-bottom: 100px
+    @media screen and (max-width: 575px)
+        padding-bottom: 48px
+
+
+// ** OTHER ** //
+.load-box
+    position: absolute
+    left: 0
+    top: 0
+    z-index: 101
+    display: flex
+    align-items: center
+    justify-content: center
+    background: rgba(255, 255, 255, 1)
+    width: 100%
+    height: 100%
+    .spinner-border
+        color: $color-primary
+
+.load-box.over--page
+    z-index: 2000
+
+.img-container
+    img
+        border-radius: 4px
+        max-width: 100%
+
+.preview-img-container
+    width: 200px
+    height: 200px
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: center
+
+.preview-img-container__deal
+    width: 240px
+    height: 256px
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: center
+
+
+.img-circle-container
+    width: 36px
+    height: 36px
+    border-radius: 50%
+    img
+        border-radius: 50%
+        width: 100%
+
+
+.cursor-pointer
+    cursor: pointer
+
+.cursor-default
+    cursor: default !important
+
+
+.popover
+    border: none
+    font-family: 'Rubik', sans-serif
+    .popover-body
+        padding: 20px
+        border-radius: 4px
+        min-width: 170px
+        border: none
+        box-shadow: 0 0 40px rgba(0, 84, 212, 0.1)
+    .arrow
+        &::before
+            border-left-color: rgba(0, 0, 0, 0.06)
+            border-right-color: rgba(0, 0, 0, 0.06)
+
+    .popover-item
+        transition: 300ms ease-in-out
+        &:hover
+            cursor: pointer
+            color: $color-primary
+
+.nowrap
+    white-space: nowrap

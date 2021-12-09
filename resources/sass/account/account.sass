@@ -1,0 +1,505 @@
+#account--app
+    position: relative
+    background: $bg-light
+    min-height: 100vh
+    padding: 98px 30px 30px 204px
+    @media screen and (max-width: 991px)
+        padding: 64px 0 0 0
+        background: #ffffff
+
+
+
+    .card--common
+        background: #ffffff
+        border-radius: 4px
+        height: 100%
+
+        .card--common__header
+            padding: 0 30px
+            position: relative
+            display: flex
+            justify-content: space-between
+            align-items: center
+            height: 84px
+            background: #ffffff
+            border-bottom: 1px solid $bg-grey
+            @media screen and (max-width: 991px)
+                height: auto
+                border-bottom: none
+                padding: 0 24px
+                margin-bottom: 10px
+
+        .card--common__header.small-header
+            height: 64px
+            @media screen and (max-width: 991px)
+                height: auto
+
+        .card--common__body
+            padding: 28px 30px
+            max-height: calc(100vh - 98px - 30px - 84px)
+            height: 100%
+            overflow-y: scroll
+            @media screen and (max-width: 991px)
+                max-height: 100%
+                height: auto
+                padding: 20px 24px
+                overflow-y: visible
+
+            &::-webkit-scrollbar-track
+                background: transparent
+
+    .card--common.mb-30
+        @media screen and (max-width: 991px)
+            margin-bottom: 0
+
+
+
+    .sidebar__filter
+        padding-left: 0
+        margin-bottom: 0
+
+        li, button.collapse-button
+            list-style: none
+            padding: 20px 16px
+            border-bottom: 1px solid #EEEEEE
+            background: #ffffff
+            position: relative
+            z-index: 2
+            margin-left: -16px
+            margin-right: -16px
+            transition: 300ms ease-in-out
+            @media screen and (max-width: 1200px)
+                margin-left: 0
+                margin-right: 0
+                padding: 18px 16px
+            &::before
+                content: ''
+                position: absolute
+                left: 0
+                top: 6px
+                border-radius: 4px
+                background: #F2F6FC
+                width: 0
+                height: calc(100% - 12px)
+                transition: 300ms ease-in-out
+                z-index: -1
+                @media screen and (max-width: 1200px)
+                    top: 5px
+
+            &:hover
+                cursor: pointer
+                color: $color-primary
+
+        li.active, .collapse-button.active
+            color: $color-primary
+            &::before
+                width: 100%
+
+        button.collapse-button
+            border: none
+            display: flex
+            align-items: center
+            justify-content: space-between
+            width: calc(100% + 32px)
+            text-align: left
+            @media screen and (max-width: 1200px)
+                width: 100%
+            img
+                background: #ffffff
+                width: 20px
+                height: 20px
+                border-radius: 50%
+                transition: 300ms ease-in-out
+
+        button.collapsed
+            border-bottom: 1px solid #EEEEEE
+            img
+                transform: rotate(180deg)
+
+
+        .collapse-card
+            padding-bottom: 14px
+            padding-top: 14px
+            p
+                margin-bottom: 13px
+                &:hover
+                    cursor: pointer
+
+        .collapse
+            margin-left: -16px
+            margin-right: -16px
+            padding: 0 16px
+            border-bottom: 1px solid #EEEEEE
+            @media screen and (max-width: 1200px)
+                margin: 0
+
+
+
+    .h-100-vh
+        height: calc(100vh - 128px)
+        @media screen and (max-width: 991px)
+            height: 100%
+
+#note_data
+    .deals-table
+        .deals-table__header
+            grid-template-columns: 300px 100px auto
+        .deals-table__item
+            align-items: flex-start
+            grid-template-columns: 300px 100px auto
+
+
+
+
+#chat
+    .messages
+        height: 400px
+        overflow-y: scroll
+
+        .message__item
+            display: flex
+            margin-bottom: 20px
+
+            .message-image
+                max-width: 180px
+
+    .send__box
+        min-height: 48px
+        padding: 8px 20px
+        border: 1px solid #EEEEEE
+        border-radius: 4px
+        display: grid
+        align-items: center
+        grid-template-columns: 28px auto 138px
+        @media screen and (max-width: 1200px)
+            grid-template-columns: 28px auto 60px
+        @media screen and (max-width: 400px)
+            grid-template-columns: 28px auto 48px
+            padding: 8px
+
+        button.send__button
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: flex-end
+            border-top: none !important
+            border-right: none !important
+            border-bottom: none !important
+            border-left: 1px solid #EEEEEE
+            background: #ffffff
+            box-shadow: none !important
+            transition: 300ms ease-in-out
+            span
+                margin-right: 8px
+                color: $color-primary
+
+            &:hover
+                opacity: 0.8
+
+
+        textarea
+            border: none !important
+            box-shadow: none !important
+            font-size: 14px
+            padding: 0 12px
+            height: 20px
+            &::-webkit-scrollbar-track
+                background: #ffffff
+            &::placeholder
+                color: $text-light
+
+
+        .b-form-file
+            input
+                width: 28px
+                height: 28px
+
+            label
+                width: 28px
+                height: 28px
+                padding: 0
+                border: none
+                box-shadow: none !important
+                &:hover
+                    cursor: pointer
+                &::after
+                    content: url("/svg/add-chat-file.svg")
+                    padding: 0
+                    height: 100%
+                    width: 100%
+                    background: #ffffff
+
+
+    .chat__navigation
+        display: flex
+        button
+            border-radius: 4px
+            color: $black-color
+            font-weight: 400
+            @media screen and (max-width: 575px)
+                padding: 6px 12px
+        button.btn-v1
+            color: #ffffff
+
+    .images
+        display: grid
+        grid-template-columns: repeat(6, 15%)
+        grid-row-gap: 30px
+        justify-content: space-between
+        height: 400px
+        overflow-y: scroll
+        padding-right: 15px
+
+        img
+            width: 100%
+            border-radius: 4px
+
+    .docs
+        height: 400px
+        overflow-y: scroll
+        padding: 0 30px 0 15px
+        .docs__item
+            background: $bg-light
+            border-radius: 4px
+            padding: 24px 20px
+            display: flex
+
+
+.time__approve__show
+    .doc_link
+        border: 1px solid #E2E2E2
+        padding: 12px 20px
+        border-radius: 4px
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    .doc_link.no_file
+        img
+            filter: grayscale(1)
+            opacity: 0.8
+
+
+#fees__user
+    .custom-form
+        input
+            height: 48px
+            border-right: none
+            border-top-right-radius: 0
+            border-bottom-right-radius: 0
+            @media screen and (max-width: 470px)
+                border-bottom: none
+                border-right: 1px solid #E2E2E2
+
+        .col-7
+            @media screen and (max-width: 1440px)
+                flex: 0 0 50%
+                max-width: 50%
+            @media screen and (max-width: 470px)
+                flex: 0 0 100%
+                max-width: 100%
+
+        .col-5
+            @media screen and (max-width: 1440px)
+                flex: 0 0 50%
+                max-width: 50%
+            @media screen and (max-width: 470px)
+                flex: 0 0 100%
+                max-width: 100%
+
+        .multiselect, .multiselect__input, .multiselect__single, .multiselect__placeholder
+            @media screen and (max-width: 1440px)
+                font-size: 14px
+
+    .multiselect
+        .multiselect__tags
+            height: 48px
+            border-bottom-left-radius: 0
+            border-top-left-radius: 0
+
+
+
+
+#timing
+    margin-bottom: 30px
+    @media screen and (max-width: 991px)
+        padding: 24px 24px 0 24px
+        margin-bottom: 0
+    @media screen and (max-width: 575px)
+        background: $bg-light
+
+    .card--common
+        padding: 12px 20px
+        box-shadow: 0 0 40px rgba(0, 84, 212, 0.1)
+        display: flex
+        align-items: center
+        justify-content: space-between
+        @media screen and (max-width: 767px)
+            display: block
+        @media screen and (max-width: 575px)
+            padding: 12px
+
+
+
+    .count
+        display: flex
+        padding-left: 8px
+        span
+            width: 80px
+            height: 48px
+            margin: 0 8px
+            border-radius: 4px
+            background: $color-primary-light
+            display: flex
+            justify-content: center
+            align-items: center
+            font-size: 16px
+            font-weight: 500
+            color: $color-primary
+            @media screen and (max-width: 1200px)
+                font-size: 14px
+                height: 36px
+                width: 68px
+            @media screen and (max-width: 767px)
+                &:first-child
+                    margin-left: 0
+
+            @media screen and (max-width: 575px)
+                font-size: 12px
+                width: 58px
+
+
+.overlay
+    background: rgba(0, 0, 0, 0.3)
+    backdrop-filter: blur(12px)
+    position: fixed
+    left: 0
+    top: 0
+    z-index: 997
+    width: 100%
+    height: 100vh
+
+
+
+
+#profile
+    .mobile-main-image
+        @media screen and (max-width: 767px)
+            height: 124px
+            position: relative
+            z-index: 2
+            background: $bg-light
+            .img-container
+                width: 200px
+                height: 200px
+                margin: 0 auto
+                transform: translateY(24px)
+                position: relative
+                img
+                    border-radius: 24px
+
+            .btn-small-edit
+                position: absolute
+                right: 0
+                bottom: 0
+                transform: translate(25%, 25%)
+
+
+    .profile-information
+        @media screen and (max-width: 767px)
+            padding-top: 132px
+            background: #ffffff
+
+#profile-edit
+    .pl-100
+        padding-left: 100px
+        @media screen and (max-width: 1400px)
+            padding-left: 0
+
+
+
+.account-content
+    @media screen and (max-width: 991px)
+        padding-top: 40px
+
+
+.mobile-footer-btn-container
+    display: none
+    @media screen and (max-width: 767px)
+        display: block
+        position: fixed
+        z-index: 900
+        bottom: 0
+        left: 0
+        right: 0
+        width: 100%
+        padding: 12px 24px
+        background: rgba(255, 255, 255, 0.5)
+        -webkit-backdrop-filter: blur(18px)
+        backdrop-filter: blur(18px)
+        border-top: 1px solid $color-primary-light
+
+#deal-create, #profile-edit, #deals--page, #fees__user
+    @media screen and (max-width: 767px)
+        margin-bottom: 60px
+
+
+
+
+.documents__form
+    .col-4
+        @media screen and (max-width: 1600px)
+            flex: 0 0 50%
+            max-width: 50%
+        @media screen and (max-width: 600px)
+            flex: 0 0 100%
+            max-width: 100%
+
+    .col-6
+        @media screen and (max-width: 600px)
+            flex: 0 0 100%
+            max-width: 100%
+            margin-bottom: 16px
+
+
+    .col-8
+        @media screen and (max-width: 1600px)
+            flex: 0 0 100%
+            max-width: 100%
+
+#deal-create, #data_approval
+    .col-xl-3, .col-xl-9
+        @media screen and (max-width: 991px)
+            padding-left: 0
+            padding-right: 0
+
+    @media screen and (max-width: 991px)
+        padding-left: 15px
+        padding-right: 15px
+
+#signing-page
+    @media screen and (max-width: 1100px)
+        .link-back
+            padding-right: 20px
+
+        h3
+            display: none
+
+        .video-box
+            border-left: 0
+            padding-left: 4px
+            padding-right: 24px
+
+    @media screen and (max-width: 767px)
+        .link-back
+            padding-right: 5px
+        .video-box
+            padding-left: 4px
+            padding-right: 0
+            border-right: none
+            margin-right: 0
+            img
+                width: 24px
+
+    .mobile-buttons
+        padding: 12px 32px

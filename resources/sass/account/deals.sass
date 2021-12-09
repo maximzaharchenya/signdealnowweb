@@ -1,0 +1,383 @@
+#deals--page
+    .card--common__body
+        margin-right: -6px
+        @media screen and (max-width: 991px)
+            margin-right: 0
+
+    .deals-table__header
+        position: sticky
+        left: 0
+        top: 0
+
+#deal-show
+    .deal-create-grid
+        @media screen and (max-width: 1300px)
+            grid-template-columns: calc(100% - 290px) 260px
+
+    .deal-image__laptop
+        display: none
+        @media screen and (max-width: 1080px)
+            display: block
+        @media screen and (max-width: 991px)
+            display: none
+
+        img
+            width: 100%
+
+    .deal-image
+        @media screen and (max-width: 1080px)
+            display: none
+        @media screen and (max-width: 991px)
+            display: block
+
+.deal-create-grid
+    display: grid
+    grid-template-columns: calc(100% - 390px) 360px
+    justify-content: space-between
+    @media screen and (max-width: 991px)
+        display: block
+
+
+.deal-create__info
+    display: grid
+    grid-template-columns: 25% 65%
+    justify-content: space-between
+    @media screen and (max-width: 1600px)
+        grid-template-columns: 30% 65%
+    @media screen and (max-width: 1365px)
+        display: flex
+        flex-direction: column-reverse
+
+
+.deals__filter
+    display: grid
+    width: 854px
+    grid-template-columns: 166px 264px 264px 100px
+    justify-content: space-between
+    align-items: center
+    @media screen and (max-width: 1400px)
+        width: 750px
+        grid-template-columns: 140px 230px 230px 100px
+    @media screen and (max-width: 1200px)
+        width: 100%
+    @media screen and (max-width: 1024px)
+        grid-template-columns: 140px 210px 210px 100px
+    @media screen and (max-width: 991px)
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 24px
+
+    .multiselect
+        .multiselect__tags
+            padding: 7px 40px 7px 16px
+            min-height: 34px
+            .multiselect__placeholder
+                font-size: 14px
+        .multiselect__single
+            font-size: 14px
+        .multiselect__select
+            top: 8px
+
+
+
+.deal-users-card
+    position: relative
+    .close
+        z-index: 2
+        float: none
+        position: absolute
+        top: -18px
+        right: 0
+        &:hover
+            cursor: pointer
+
+.deals-table
+    .deals-table__header
+        background: $bg-grey
+        color: $text-grey
+        font-size: 12px
+        padding: 12px 30px
+        display: grid
+        grid-template-columns: 90px auto 170px 196px 140px
+        margin-left: -30px
+        margin-right: -30px
+        @media screen and (max-width: 1200px)
+            grid-template-columns: 70px auto 140px 196px 100px
+        @media screen and (max-width: 991px)
+            margin-left: -24px
+            margin-right: -24px
+            padding: 12px 24px
+
+        .sort-icon
+            transition: 300ms ease-in-out
+            filter: grayscale(1)
+            display: inline-block
+
+        .cursor-pointer
+            transition: 300ms ease-in-out
+            &:hover
+                opacity: 0.7
+
+        .sort-icon.active
+            filter: grayscale(0)
+        .sort-icon.sort-bottom
+            transform: rotate(180deg)
+
+    .deals-table__item
+        display: grid
+        grid-template-columns: 90px auto 170px 196px 140px
+        margin-left: -30px
+        margin-right: -30px
+        align-items: center
+        padding: 12px 30px
+        border-bottom: 1px solid #eeeeee
+        transition: 300ms ease-in-out
+        color: $text-dark
+        @media screen and (max-width: 1200px)
+            grid-template-columns: 70px auto 140px 196px 100px
+        @media screen and (max-width: 991px)
+            margin-left: -24px
+            margin-right: -24px
+            padding: 12px 24px
+        &:hover
+            background:  $color-primary-light
+        .img-container
+            width: 36px
+            height: 36px
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+                object-position: center
+                border-radius: 50%
+                border: 1px solid $color-primary-light
+
+
+.deal__card
+    display: block
+    background: #FFFFFF
+    box-shadow: 0 0 40px rgba(0, 84, 212, 0.1)
+    margin-bottom: 20px
+    height: 100%
+    .deal__card--header
+        overflow: hidden
+        position: relative
+        height: 200px
+        border-top-right-radius: 4px
+        border-top-left-radius: 4px
+        @media screen and (max-width: 600px)
+            height: 160px
+
+        img
+            width: 100%
+            height: 200px
+            object-fit: cover
+            @media screen and (max-width: 600px)
+                height: 160px
+
+        .status
+            position: absolute
+            right: 16px
+            top: 16px
+            z-index: 2
+            padding: 6px 12px
+            border-radius: 18px
+            background: $color-primary-light
+            color: $color-primary
+
+    .deal__card--body
+        border-bottom-right-radius: 4px
+        border-bottom-left-radius: 4px
+        padding: 24px
+        color: $text-dark
+        font-size: 16px
+
+#note_data
+    .deal__card
+        .deal__card--header
+            .status
+                right: 12px
+                top: 12px
+                padding: 0
+                background: transparent
+
+.deal-show-card
+    display: grid
+    grid-template-columns: 240px calc(100% - 240px)
+    @media screen and (max-width: 1365px)
+        grid-template-columns: 200px calc(100% - 200px)
+    @media screen and (max-width: 1080px)
+        display: block
+    @media screen and (max-width: 991px)
+        display: grid
+        grid-template-columns: 240px calc(100% - 240px)
+        padding-top: 40px
+        padding-left: 24px
+    @media screen and (max-width: 767px)
+        grid-template-columns: 200px calc(100% - 200px)
+    @media screen and (max-width: 575px)
+        display: block
+        padding-left: 0
+        padding-top: 0
+
+    .card--common
+        border-bottom-left-radius: 0
+        border-top-left-radius: 0
+
+    .deal-image
+        @media screen and (max-width: 575px)
+            background: $bg-light
+            padding-top: 24px
+            height: 130px
+            margin-bottom: 130px
+
+    img
+        border-bottom-left-radius: 4px
+        border-top-left-radius: 4px
+        height: 100%
+        width: 100%
+        object-fit: cover
+        object-position: center
+        @media screen and (max-width: 575px)
+            width: 200px
+            margin: 0 auto
+            border-radius: 24px
+            display: block
+            height: auto
+
+#register_deal_user
+    position: fixed
+    z-index: 10000
+    background: rgba(0, 0, 0, 0.8)
+    //filter: blur(12px)
+    width: 100%
+    height: 100vh
+    left: 0
+    top: 0
+    display: flex
+    align-items: center
+    justify-content: center
+
+    .card--register--deal--user
+        padding: 0
+        border-radius: 4px
+        width: 852px
+        display: grid
+        grid-template-columns: 40% 60%
+        background: #ffffff
+        @media screen and (max-width: 991px)
+            grid-template-columns: 100%
+
+
+        .image
+            @media screen and (max-width: 991px)
+                display: none
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+
+        .card--body
+            padding: 40px 30px
+            @media screen and (max-width: 575px)
+                padding: 30px 20px
+
+        .buttons
+            display: flex
+            @media screen and (max-width: 575px)
+                display: block
+
+            button
+                @media screen and (max-width: 575px)
+                    width: 100%
+                    display: block
+                    &:first-child
+                        margin-bottom: 20px
+
+
+.notaries-invite-table
+    .deals-table__header, .deals-table__item
+        grid-template-columns: 300px auto 200px 260px
+        @media screen and (max-width: 1600px)
+            grid-template-columns: 250px auto 160px 150px
+        @media screen and (max-width: 1400px)
+            grid-template-columns: 200px auto 140px 90px
+        @media screen and (max-width: 1200px)
+            grid-template-columns: 160px auto 120px
+        @media screen and (max-width: 991px)
+            grid-template-columns: 160px auto 140px 120px
+        @media screen and (max-width: 767px)
+            grid-template-columns: 140px auto 140px 90px
+
+
+        .img-circle-container
+            @media screen and (max-width: 1200px)
+                display: none
+
+
+#notaries--page, #note_data
+    .deals-table__header, .deals-table__item
+        grid-template-columns: 300px auto 150px 150px 260px
+        @media screen and (max-width: 1400px)
+            grid-template-columns: 280px auto 140px 140px 150px
+        @media screen and (max-width: 1280px)
+            grid-template-columns: 240px auto 140px 140px 150px
+        @media screen and (max-width: 1200px)
+            grid-template-columns: 240px auto 80px 80px 120px
+
+
+    .deal__card
+        .deal__card--header
+            background: #EEEEEE
+            text-align: center
+            @media screen and (max-width: 600px)
+                height: auto
+
+            img
+                width: auto
+                height: auto
+
+
+.notary__card
+    display: block
+    background: #FFFFFF
+    box-shadow: 0 0 40px rgba(0, 84, 212, 0.1)
+    margin-bottom: 20px
+    height: 100%
+    padding: 24px
+
+    .notary__card--header
+        display: flex
+        align-items: center
+        justify-content: space-between
+        img
+            width: 56px
+            height: 56px
+            border-radius: 50%
+
+    .notary__card--body
+        padding-top: 8px
+        .item
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+            padding: 12px 0
+            border-bottom: 1px solid #EEEEEE
+            &:last-child
+                padding-bottom: 0
+                border-bottom: none
+
+
+.time__approve--table
+    .deals-table__header, .deals-table__item
+        grid-template-columns: 70px auto 200px 160px
+
+    .deals-table__header
+        @media screen and (max-width: 767px)
+            display: none
+    .deals-table__item
+        @media screen and (max-width: 767px)
+            grid-template-columns: calc(100% - 130px) 130px
+
+

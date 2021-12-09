@@ -1,0 +1,53 @@
+/* PAGE ANIMATION */
+.page-enter-active
+    transition: opacity 0.5s, transform 0.5s
+    transition-delay: 0.4s
+    .auth--page
+        .content-container
+            transition: opacity 0.5s, transform 0.5s
+            transition-delay: 0.4s
+
+.page-leave-active
+    transition: opacity 0.3s, transform 0.3s
+    .auth--page
+        .content-container
+            transition: opacity 0.3s, transform 0.3s
+
+.page-enter, .page-leave-to
+    .auth--page
+        .content-container
+            opacity: 0
+            transform: translateX(-10%)
+
+
+.common--page, #account--app
+    .page-enter-active
+        transition: opacity 0.5s, transform 0.5s
+        transition-delay: 0.4s
+
+    .page-leave-active
+        transition: opacity 0.3s, transform 0.3s
+
+    .page-enter, .page-leave-to
+        opacity: 0
+        transform: translateX(-10%)
+
+
+
+
+/*  SIDEBAR RIGTH*/
+
+.slide-right-enter-active
+    transition: all 0.3s ease
+    .mobile-navigation
+        transition: all 0.3s ease
+
+.slide-right-leave-active
+    transition: all 0.5s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+    .mobile-navigation
+        transition: all 0.5s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+
+.slide-right-enter, .slide-right-leave-to
+    .mobile-navigation
+        transform: translateX(100%)
+
