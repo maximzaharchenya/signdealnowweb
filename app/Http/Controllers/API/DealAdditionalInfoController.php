@@ -44,7 +44,8 @@ class DealAdditionalInfoController extends Controller
         $document = Document::where('id', $deal_id)->first();
         $message_data['title'] = 'Вам пришло приглашение вступить в сделку!';
         $message_data['content'] = 'Вас пригласили вступить в сделку по адресу: ' . $document['country'] . ', ' . $document['city'] . ',' . $document['address'] . '. Перейдите по ссылке ниже, чтобы вступить!';
-        $message_data['button_link'] = env('APP_URL') . 'account/deal/' . $deal_id . '/register?pin=' . $data['pin'];
+//        $message_data['button_link'] = env('APP_URL') . 'account/deal/' . $deal_id . '/register?pin=' . $data['pin'];
+        $message_data['button_link'] = config('app.url') . 'account/deal/' . $deal_id . '/register?pin=' . $data['pin'];
         $message_data['button_text'] = 'Вступить';
         $mailService = new MailService();
         if (!empty(request()->user_email))

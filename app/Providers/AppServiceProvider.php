@@ -8,6 +8,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Laravel\Passport\Passport;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,5 +33,6 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
         JsonResource::withoutWrapping();
         Document::observe(DocumentObserver::class);
+        Passport::routes();
     }
 }

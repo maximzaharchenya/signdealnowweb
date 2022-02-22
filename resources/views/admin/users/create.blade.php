@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @section('content')
     @include('admin.partial.top-nav')
     <section class="d-flex">
@@ -86,7 +86,83 @@
                             <div class="row">
                                 <div class="col-12 d-flex flex-column">
                                     <label for="languages">Знание языков</label>
-                                    <input type="text" id="languages" name="languages">
+{{--                                    <input type="text" id="languages" name="languages">--}}
+                                    <select name="languages[]" id="languages" multiple class="js-example-basic-single" >
+                                        <option value="Русский" >Русский</option>
+                                        <option value="Английский" >Английский</option>
+                                        <option value="Эстонский" >Эстонский</option>
+                                        <option value="Украинский" >Украинский</option>
+                                        <option value="Азербайджанский">Азербайджанский</option>
+                                        <option value="Албанский">Албанский</option>
+                                        <option value="Амхарский">Амхарский</option>
+                                        <option value="Арабский">Арабский</option>
+                                        <option value="Армянский">Армянский</option>
+                                        <option value="Африкаанс">Африкаанс</option>
+                                        <option value="Баскский">Баскский</option>
+                                        <option value="Белорусский">Белорусский</option>
+                                        <option value="Бенгальский">Бенгальский</option>
+                                        <option value="Бирманский">Бирманский</option>
+                                        <option value="Болгарский">Болгарский</option>
+                                        <option value="Боснийский">Боснийский</option>
+                                        <option value="Валлийский">Валлийский</option>
+                                        <option value="Венгерский">Венгерский</option>
+                                        <option value="Вьетнамский">Вьетнамский</option>
+                                        <option value="Гавайский">Гавайский</option>
+                                        <option value="Галисийский">Галисийский</option>
+                                        <option value="Греческий">Греческий</option>
+                                        <option value="Грузинский">Грузинский</option>
+                                        <option value="Гуджарати">Гуджарати</option>
+                                        <option value="Датский">Датский</option>
+                                        <option value="Зулу">Зулу</option>
+                                        <option value="Иврит">Иврит</option>
+                                        <option value="Игбо">Игбо</option>
+                                        <option value="Идиш">Идиш</option>
+                                        <option value="Индонезийский">Индонезийский</option>
+                                        <option value="Ирландский">Ирландский</option>
+                                        <option value="Исландский">Исландский</option>
+                                        <option value="Испанский">Испанский</option>
+                                        <option value="Итальянский">Итальянский</option>
+                                        <option value="Йоруба">Йоруба</option>
+                                        <option value="Казахский">Казахский</option>
+                                        <option value="Каннада">Каннада</option>
+                                        <option value="Каталанский">Каталанский</option>
+                                        <option value="Киргизский">Киргизский</option>
+                                        <option value="Китайский">Китайский</option>
+                                        <option value="Корейский">Корейский</option>
+                                        <option value="Корсиканский">Корсиканский</option>
+                                        <option value="Креольский (Гаити)">Креольский (Гаити)</option>
+                                        <option value="Курманджи">Курманджи</option>
+                                        <option value="Кхмерский">Кхмерский</option>
+                                        <option value="Кхоса">Кхоса</option>
+                                        <option value="Лаосский">Лаосский</option>
+                                        <option value="Латинский">Латинский</option>
+                                        <option value="Латышский">Латышский</option>
+                                        <option value="Литовский">Литовский</option>
+                                        <option value="Люксембургский">Люксембургский</option>
+                                        <option value="Македонский">Македонский</option>
+                                        <option value="Малагасийский">Малагасийский</option>
+                                        <option value="Малайский">Малайский</option>
+                                        <option value="Малаялам">Малаялам</option>
+                                        <option value="Мальтийский">Мальтийский</option>
+                                        <option value="Маори">Маори</option>
+                                        <option value="Маратхи">Маратхи</option>
+                                        <option value="Монгольский">Монгольский</option>
+                                        <option value="Немецкий">Немецкий</option>
+                                        <option value="Непальский">Непальский</option>
+                                        <option value="Нидерландский">Нидерландский</option>
+                                        <option value="Норвежский">Норвежский</option>
+                                        <option value="Ория">Ория</option>
+                                        <option value="Панджаби">Панджаби</option>
+                                        <option value="Персидский">Персидский</option>
+                                        <option value="Польский">Польский</option>
+                                        <option value="Португальский">Португальский</option>
+                                        <option value="Пушту">Пушту</option>
+                                        <option value="Руанда">Руанда</option>
+                                        <option value="Румынский">Румынский</option>
+                                        <option value="Самоанский">Самоанский</option>
+                                        <option value="Себуанский">Себуанский</option>
+                                        <option value="Сербский">Сербский</option>
+                                    </select>
                                 </div>
                                 <div class="col-12 d-flex flex-column mt-3">
                                     <label for="about">Персональные предпочтения</label>
@@ -102,4 +178,12 @@
             </div>
         </div>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        // In your Javascript (external .js resource or <script> tag)
+        $(document).ready(function() {
+            $('.js-example-basic-single').select2();
+        });
+    </script>
 @endsection

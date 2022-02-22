@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use GuzzleHttp;
 use Illuminate\Http\JsonResponse;
 use App\Services\MainService;
+use Symfony\Component\HttpFoundation\Request;
 
 class UserController extends Controller
 {
@@ -21,17 +22,36 @@ class UserController extends Controller
         $http = new GuzzleHttp\Client;
 
         try {
-            $response = $http->post(config('services.passport.login_endpoint'), [
-                'form_params' => [
-                    'grant_type' => 'password',
-                    'client_id' => config('services.passport.client_id'),
-                    'client_secret' => config('services.passport.client_secret'),
-                    'username' => request()->email,
-                    'password' => request()->password,
-                ],
-            ]);
-            return response()->json(json_decode($response->getBody()->getContents()));
+            $data = [
+                'grant_type' => 'password',
+                'client_id' => config('services.passport.client_id'),
+                'client_secret' => config('services.passport.client_secret'),
+                'username' => request()->email,
+                'password' => request()->password,
+                'scope' => '',
+            ];
+
+            // Get access_token
+            $request = Request::create('/oauth/token', 'POST', $data);
+
+            //
+            $response = app()->handle($request);
+
+
+            if ($response->getStatusCode() != 200) {
+
+                return response()->json([
+                    'message' => 'Incorrect email or password - maybe both, or at least one(1).',
+                    'status' => $response->getStatusCode(),
+                ], $response->getStatusCode());
+            }
+            // unpack the response
+            $responseData = json_decode($response->getContent());
+
+
+            return response()->json($responseData);
         } catch (GuzzleHttp\Exception\BadResponseException $e) {
+
             if ($e->getCode() === 500) {
                 return response()->json('Please enter email and password.', $e->getCode());
             } else if ($e->getCode() === 400) {
@@ -51,7 +71,7 @@ class UserController extends Controller
 
         $message_data['title'] = 'Нам требуется проверить Ваш E-mail!';
         $message_data['content'] = 'Перейдите по ссылке ниже, чтобы закончить проверку Вашего E-mail!';
-        $message_data['button_link'] = env('APP_URL') . 'email/check?pin=' . $data['email_check'];
+        $message_data['button_link'] = config('app.url') . 'email/check?pin=' . $data['email_check'];
         $message_data['button_text'] = 'Проверить';
         $mailService->send($data['email'], $message_data['title'], $message_data['content'], $message_data['button_text'], $message_data['button_link']);
         return response()->json($user);

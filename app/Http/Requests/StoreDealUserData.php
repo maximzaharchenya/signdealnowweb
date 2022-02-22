@@ -12,7 +12,7 @@ class StoreDealUserData extends FormRequest
 
     public function authorize(): bool
     {
-        return $this->user()->can('inDeal', $this->deal_id);
+        return !$this->user()->can('inDeal', $this->deal_id);
     }
 
     public function rules(): array

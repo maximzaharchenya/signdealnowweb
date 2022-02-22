@@ -4,7 +4,7 @@
 
         <div class="mobile-main-image d-block d-md-none">
             <div class="img-container">
-                <img v-if="user.profile_image" :src="'/storage/' + user.profile_image" alt="">
+                <img v-if="user.profile_image" :src="'/' + user.profile_image" alt="">
                 <img v-else src="/img/defaults/user_default.png" alt="">
 
                 <router-link to="/account/edit" class="btn-small-edit">
@@ -28,7 +28,7 @@
                     <div class="row justify-content-between">
                         <div class="col-3 d-none d-md-block">
                             <div class="img-container">
-                                <img v-if="user.profile_image" :src="'/storage/' + user.profile_image" alt="">
+                                <img v-if="user.profile_image" :src="'/' + user.profile_image" alt="">
                                 <img v-else src="/img/defaults/user_default.png" alt="">
                             </div>
                         </div>

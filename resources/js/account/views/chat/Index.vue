@@ -42,19 +42,19 @@
                         <div class="message__item" v-for="message in filteredMessages">
                             <div class="mr-3">
                                 <div class="img-circle-container" v-if="message.user_image">
-                                    <img :src="`/storage/${message.user_image}`" alt="">
+                                    <img :src="`/${message.user_image}`" alt="">
                                 </div>
                                 <img src="/svg/user-default-36.svg" alt="" v-else>
                             </div>
                             <div>
                                 <p class="mb-1 font-500">{{ message.user_name }}</p>
                                 <p class="mb-1 fs-16" v-if="message.is_image">
-                                    <a :href="`/storage/messages/${message.file_name}`" target="_blank">
-                                        <img :src="`/storage/messages/${message.file_name}`" class="message-image" alt="">
+                                    <a :href="`/messages/${message.file_name}`" target="_blank">
+                                        <img :src="`/messages/${message.file_name}`" class="message-image" alt="">
                                     </a>
                                 </p>
                                 <p class="mb-1 fs-16" v-else-if="message.is_file">
-                                    <a :href="`/storage/messages/${message.file_name}`" target="_blank">
+                                    <a :href="`/messages/${message.file_name}`" target="_blank" download>
                                         {{ message.original_file_name }}
                                     </a>
                                 </p>

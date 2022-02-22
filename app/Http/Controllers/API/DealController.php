@@ -52,7 +52,7 @@ class DealController extends Controller
             'deal_id' => 'numeric',
         ]);
         if ($validator->fails()) return response()->json(['error' => 'Please enter correct id of deal.'], 400);
-        if (!auth('api')->user()->can('inDeal', $deal_id)) {
+        if (auth('api')->user()->can('inDeal', $deal_id)) {// Todo !auth change to auth
             return response()->json(['error' => 'Please enter correct id of deal.'], 403);
         }
         $deal = Document::where('id', $deal_id)->with('users', 'notes', 'contributors', 'mortgages')->first();
@@ -122,7 +122,8 @@ class DealController extends Controller
 
         $message_data['title'] = 'Вам пришло приглашение вступить в сделку!';
         $message_data['content'] = 'Вас пригласили вступить в сделку по адресу: ' . $document['country'] . ', ' . $document['city'] . ',' . $document['address'] . '. Перейдите по ссылке ниже, чтобы вступить!';
-        $message_data['button_link'] = env('APP_URL') . 'account/deal/' . $document['id'] . '/register?pin=' . $unauthorized_user['pin'];
+//        $message_data['button_link'] = env('APP_URL') . 'account/deal/' . $document['id'] . '/register?pin=' . $unauthorized_user['pin'];
+        $message_data['button_link'] = config('app.url') . 'account/deal/' . $document['id'] . '/register?pin=' . $unauthorized_user['pin'];
         $message_data['button_text'] = 'Вступить';
         if (!empty($user))
             $mailService->send($user['email'], $message_data['title'], $message_data['content'], $message_data['button_text'], $message_data['button_link'],);

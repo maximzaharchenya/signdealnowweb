@@ -173,7 +173,7 @@
                         <div> {{status(item.status)}}</div>
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="img-container">
-                                <img v-if="item.image" :src="'/storage/' + item.image" alt="">
+                                <img v-if="item.image" :src="'/' + item.image" alt="">
                                 <img v-else src="/img/defaults/deal.jpg" alt="">
                             </div>
                             <img src="/svg/arrow-right.svg" alt="">
@@ -193,7 +193,7 @@
                             <router-link :to="'/account/deals/' + item.id + '/show'"
                                          class="deal__card">
                                 <div class="deal__card--header">
-                                    <img v-if="item.image" :src="'/storage/' + item.image" alt="">
+                                    <img v-if="item.image" :src="'/' + item.image" alt="">
                                     <img v-else src="/img/defaults/deal.jpg" alt="">
 
                                     <div class="status"> {{status(item.status)}}</div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Services\MainService;
 use Validator;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -25,7 +26,7 @@ class UserController extends Controller
         return view('admin.users.create');
     }
 
-    public function store(Request $request)
+    public function store(Request $request,MainService $mainService)
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
@@ -40,9 +41,12 @@ class UserController extends Controller
 
         $data = $request->all();
         if ($request->file('profile_image')){
-            $data['profile_image'] = $request->file('profile_image')->store('Profile_img', 'public');
+//            $data['profile_image'] = $request->file('profile_image')->store('Profile_img', 'public');
+            $path = $mainService->saveImage($request->file('profile_image'), 'Profile_img', 200, 200);
+            $data['profile_image'] = 'Profile_img/' . $path;
         }
         if ($data['password']) $data['password'] = bcrypt($data['password']);
+        $data['languages'] =  json_encode($data['languages']);
         User::create($data);
         return redirect('/admin/users');
     }
@@ -52,7 +56,7 @@ class UserController extends Controller
         return view('admin.users.edit')->with('user', $user);
     }
 
-    public function update(User $user, Request $request)
+    public function update(User $user, Request $request, MainService $mainService)
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
@@ -76,7 +80,9 @@ class UserController extends Controller
             if (!empty($user['profile_image'])){
                 Storage::delete('/public/' . $user->profile_image);
             }
-            $data['profile_image'] = $request->file('profile_image')->store('Profile_img', 'public');
+//            $data['profile_image'] = $request->file('profile_image')->store('Profile_img', 'public');
+            $path = $mainService->saveImage($request->file('profile_image'), 'Profile_img', 200, 200);
+            $data['profile_image'] = 'Profile_img/' . $path;
         }else{
             unset($data['profile_image']);
         }

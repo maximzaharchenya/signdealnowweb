@@ -20,7 +20,7 @@ class MailService
 
         Log::info('Sending email to ' . $to . ', subject: ' . $subject);
 
-        if ((env('APP_ENV') == 'prod') || env('APP_ENV') == 'stage') Mail::to($to)->send(new GeneralMail($message_data));
+        if ((env('APP_ENV') == 'prod') || env('APP_ENV') == 'stage' || true ) Mail::to($to)->send(new GeneralMail($message_data)); # TODO Remove || true
     }
 
 }

@@ -30,7 +30,7 @@
                                  @click="notary = item">
                                 <div class="d-flex align-items-center">
                                     <div class="img-circle-container mr-3">
-                                        <img v-if="item.image" :src="'/storage/' + item.image" alt="">
+                                        <img v-if="item.image" :src="'/' + item.image" alt="">
                                         <img v-else src="/img/defaults/user_default.png" alt="">
                                     </div>
                                     <span> {{item.name}} {{item.surname}}</span>
@@ -64,7 +64,7 @@
                                             </div>
                                             <p class="mb-0 color-text-grey">Нотариус</p>
                                         </div>
-                                        <img v-if="item.image" :src="'/storage/' + item.image" alt="">
+                                        <img v-if="item.image" :src="'/' + item.image" alt="">
                                         <img v-else src="/img/defaults/user_default.png" alt="">
                                     </div>
 

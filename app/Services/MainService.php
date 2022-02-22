@@ -13,10 +13,10 @@ class MainService
     {
         if (empty($filename)) $filename = Str::random(32) . '.' . $image->getClientOriginalExtension();
 
-        $path = storage_path('app/public/' . $folder);
+        $path = public_path('/' . $folder);
         File::isDirectory($path) or File::makeDirectory($path, 0775, true, true);
 
-        $path = storage_path('app/public/' . $folder . '/' . $filename);
+        $path = public_path('/' . $folder . '/' . $filename);
 
         if (!empty($height))
             Image::make($image)->fit($width, $height)->save($path);
@@ -32,10 +32,10 @@ class MainService
         $extension = $file->getClientOriginalExtension();
         if (empty($filename)) $filename = Str::random(32) . '.' . $extension;
 
-        $path = storage_path('app/public/' . $folder);
+        $path = public_path('/' . $folder);
         File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
 
-        $path = storage_path('app/public/' . $folder . '/' . $filename);
+        $path = public_path('/' . $folder . '/' . $filename);
 
         if(in_array($extension, ['jpg','jpeg','png','gif'])) {
             if (!empty($height))
@@ -44,8 +44,11 @@ class MainService
                 Image::make($file)->resize($width, null, function ($constraint) {
                     $constraint->aspectRatio();
                 })->save($path);
-        } else
-            Storage::putFileAs('public/' . $folder, $file, $filename);
+        } else{
+            $path = public_path('/' . $folder);
+//            Storage::putFileAs('public/' . $folder, $file, $filename);
+            $file->move($path,$filename);
+        }
 
 
         return basename($filename);

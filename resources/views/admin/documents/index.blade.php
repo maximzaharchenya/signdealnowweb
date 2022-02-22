@@ -15,7 +15,7 @@
                     @foreach($documents as $document)
                         <div class="col-3 d-flex mb-3">
                             <a class="w-100" href="/admin/documents/{{ $document->id }}/edit">
-                                <div style="background: #F3F3F3;" class="p-3 d-flex align-items-center h-100 w-100">
+                                <div style="background: #cdcdcd;" class="p-3 d-flex align-items-center h-100 w-100">
                                     <p class="mb-0">{{ $document->title }}</p>
                                 </div>
                             </a>

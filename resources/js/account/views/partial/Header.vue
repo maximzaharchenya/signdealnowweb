@@ -19,7 +19,7 @@
                 <div class="d-flex">
                     <div class="mr-2">
                         <div class="img-circle-container">
-                            <img v-if="user.profile_image" :src="'/storage/' + user.profile_image" alt="">
+                            <img v-if="user.profile_image" :src="'/' + user.profile_image" alt="">
                             <img v-else src="/svg/user-default-36.svg" alt="">
                         </div>
                     </div>

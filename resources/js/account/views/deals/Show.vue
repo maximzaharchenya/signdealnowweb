@@ -9,7 +9,7 @@
             <div>
                 <div class="deal-show-card mb-30">
                     <div class="deal-image">
-                        <img v-if="deal.image" :src="'/storage/' + deal.image" alt="">
+                        <img v-if="deal.image" :src="'/' + deal.image" alt="">
                         <img v-else src="/img/defaults/deal.jpg" alt="">
                     </div>
                     <div class="card--common h-auto">
@@ -67,7 +67,7 @@
 
             <div>
                 <div class="deal-image__laptop">
-                    <img v-if="deal.image" :src="'/storage/' + deal.image" alt="">
+                    <img v-if="deal.image" :src="'/' + deal.image" alt="">
                     <img v-else src="/img/defaults/deal.jpg" alt="">
                 </div>
 
@@ -84,7 +84,7 @@
                             <div class="mb-24 d-flex">
                                 <div class="mr-2">
                                     <div class="img-circle-container">
-                                        <img v-if="item.profile_image" :src="'/storage/' + item.profile_image" alt="">
+                                        <img v-if="item.profile_image" :src="'/' + item.profile_image" alt="">
                                         <img v-else src="/svg/user-default-36.svg" alt="">
                                     </div>
                                 </div>
@@ -115,7 +115,7 @@
                             <div class="mb-24 d-flex">
                                 <div class="mr-2">
                                     <div class="img-circle-container">
-                                        <img v-if="item.profile_image" :src="'/storage/' + item.profile_image" alt="">
+                                        <img v-if="item.profile_image" :src="'/' + item.profile_image" alt="">
                                         <img v-else src="/svg/user-default-36.svg" alt="">
                                     </div>
                                 </div>

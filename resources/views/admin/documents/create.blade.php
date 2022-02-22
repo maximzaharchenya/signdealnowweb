@@ -15,7 +15,7 @@
                     @csrf
                     <div class="row align-items-center">
                         <div class="col-4 d-flex flex-column">
-                            <label for="title">Навание</label>
+                            <label for="title">Название</label>
                             <input type="text" id="title" name="title">
                         </div>
                         <div class="col-4 d-flex flex-column">

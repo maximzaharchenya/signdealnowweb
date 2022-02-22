@@ -45,7 +45,8 @@ class NotaryController extends Controller
 
         $message_data['title'] = 'Вам пришло приглашение вступить в сделку!';
         $message_data['content'] = 'Вас пригласили вступить в сделку по адресу: ' . $deal['country'] . ', ' . $deal['city'] . ',' . $deal['address'] . '. Перейдите по ссылке ниже, чтобы вступить!';
-        $message_data['button_link'] = env('APP_URL') . 'account/deal/' . $deal['id'] . '/notary/register?pin=' . $data['pin'];
+//        $message_data['button_link'] = env('APP_URL') . 'account/deal/' . $deal['id'] . '/notary/register?pin=' . $data['pin'];
+        $message_data['button_link'] = config('app.url') . 'account/deal/' . $deal['id'] . '/notary/register?pin=' . $data['pin'];
         $message_data['button_text'] = 'Вступить';
         $mailService = new MailService();
         $mailService->send($user['email'], $message_data['title'], $message_data['content'], $message_data['button_text'], $message_data['button_link'],);

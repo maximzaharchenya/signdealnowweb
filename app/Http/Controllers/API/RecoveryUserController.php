@@ -24,7 +24,8 @@ class RecoveryUserController extends Controller
             RecoveryUsers::create($data);
             $message_data['title'] = 'Восстановаление доступа к системе';
             $message_data['content'] = 'Для того, чтобы восставноить доступ к системе, перейдите по ссылке ниже.';
-            $message_data['button_link'] = env('APP_URL') . '/reset?pin=' . $data['pin'];
+//            $message_data['button_link'] = env('APP_URL') . '/reset?pin=' . $data['pin'];
+            $message_data['button_link'] = config('app.url') . '/reset?pin=' . $data['pin'];
             $message_data['button_text'] = 'Восстановить';
             $mailService->send($data['email'], $message_data['title'], $message_data['content'], $message_data['button_text'], $message_data['button_link']);
             return response()->json(['success' => true]);
